@@ -22,5 +22,5 @@ jobs:
       - name: Snyk IaC
         run: |
           snyk iac test --json-file-output=snyk-iac-${{ github.run }}.json \
-          --json --print-deps | --print-deps | snyk-delta \
+          --json --print-deps | snyk-delta \
           --baselineOrg ${{ secrets.SNYK_ORG_ID }} --setPassIfNoBaseline true 
