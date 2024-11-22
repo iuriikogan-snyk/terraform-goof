@@ -1,0 +1,7 @@
+resource "aws_s3_bucket" "allowed" {
+  bucket = "my-tf-test-bucket"
+  
+  tags = {
+    owner       = "iurii"
+  }
+}
