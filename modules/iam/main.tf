@@ -21,3 +21,5 @@ resource "aws_iam_policy_attachment" "terraform_policy_attach" {
   users      = [aws_iam_user.terraform_user.name]
   policy_arn = aws_iam_policy.terraform_policy.arn
 }
+
+# test
