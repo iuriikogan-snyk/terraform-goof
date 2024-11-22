@@ -1,17 +1,17 @@
 package rules
 
 deny[msg] {
-    resource := input.resource.aws_redshift_cluster[name]
+    resource := input.resource.aws_s3_bucket[name]
     not resource.tags.owner
-	
+
     msg := {
         "publicId": "OWNER_TAG",
-        "title": "Missing an owner from tag",
+        "title": "No Owner Tag",
         "severity": "medium",
-        "msg": sprintf("input.resource.aws_s3_bucket.[%s].tags", [name]),
-        "issue": "",
-        "impact": "",
-        "remediation": "please add a tag to bucket: " + sprintf("input.resource.aws_s3_bucket.[%s].tags", [name]") 
-        "references": [],
+        "msg": sprintf("Missing owner tag in resource: input.resource.aws_s3_bucket[%s].tags", [name]),
+        "issue": "Missing an owner from tag",
+        "impact": "Medium",
+        "remediation": "Please add an owner tag to bucket",
+        "references": ["www.internaldocs.com/ownertagrules/"]
     }
 }

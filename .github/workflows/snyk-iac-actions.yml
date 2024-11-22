@@ -26,4 +26,4 @@ jobs:
           # For example `deployment.yaml` for a Kubernetes deployment manifest
           # or `main.tf` for a Terraform configuration file
           file: .
-          args: --severity-threshold=high
+          args: --severity-threshold=medium
